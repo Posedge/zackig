@@ -1,0 +1,37 @@
+version: '3.4'
+
+services:
+
+  # React-based frontend
+  frontend:
+    build:
+      context: frontend
+      target: dev
+    volumes:
+      - './frontend:/opt/app'
+    ports:
+      - '3000:3000'
+
+  # Flask-based backend
+  backend:
+    build:
+      context: backend
+      target: dev
+    volumes:
+      - './backend:/opt/app'
+    ports:
+      - '5000:5000'
+    environment:
+      ZKG_COOKIE_SECURE: "false"
+      ZKG_DISABLE_CSRF_CHECK: "true"
+      ZKG_MONGODB: 'mongodb://admin:{password}@mongodb:27017'
+      ZKG_MONGODB_PASSWORD: admin
+
+  # Database
+  mongodb:
+    image: 'mongo:4'
+    ports:
+      - '27017:27017'
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: admin

@@ -1,0 +1,59 @@
+.overlay {
+  position: fixed;
+  z-index: 10;
+  width: 90%;
+  left: 5%;
+  height: 90%;
+  top: 5%;
+}
+
+.overlay a {
+  color: black;
+}
+
+.overlay-card {
+  height: 100%;
+}
+
+.overlay-card-body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.overlay-image {
+  float: left;
+  max-width: 200px;
+  max-height: 200px;
+  margin: 0 16px 16px 16px;
+}
+
+.rendered-content {
+  height: 100%;
+  overflow: scroll;
+}
+
+#edit-note-text-wrapper {
+  height: 100%;
+  overflow: scroll;
+}
+
+#edit-note-text {
+  height: 100%;
+}
+
+.close-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+}
+
+.footer-button {
+  float: right;
+  margin: 4px;
+}
