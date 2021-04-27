@@ -1,5 +1,5 @@
 # development server
-FROM node:12-alpine as dev
+FROM node:alpine as dev
 
 WORKDIR /opt/app/
 
@@ -8,7 +8,7 @@ CMD echo 'installing dependencies...' && npm install \
 
 
 # production build
-FROM node:12-alpine as builder
+FROM node:alpine as builder
 
 WORKDIR /opt/app/
 ADD package.json package-lock.json /opt/app/
